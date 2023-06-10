@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>Placement Prediction</title>
+    <style>
+		body {
+			font-family: Arial, sans-serif;
+			background-color: #f4f4f4;
+		}
+		
+		form {
+			background-color: #047ea6;
+			padding: 20px;
+			margin: 0 auto;
+			border-radius: 5px;
+			box-shadow: 0 0 10px rgba(0,0,0,0.2);
+			display: flex; /* Added to make form display as flexbox */
+			flex-wrap: wrap; /* Added to allow flexbox items to wrap to next row */
+			justify-content: space-between; /* Added to separate two columns */
+            color: #f4f4f4;
+            width: 80%;
+            height: 450px;
+		}
+		
+		label {
+			display: block;
+			margin-bottom: 5px;
+			font-weight: bold;
+            
+		}
+		
+		input[type="text"],
+		input[type="number"]{
+			width: 100%;
+			padding: 10px;
+			border-radius: 5px;
+			border: none;
+			margin-bottom: 20px;
+			box-sizing: border-box;
+			background-color: #f9f9f9;
+            font-size: x-large;
+            font-weight: bolder;
+		}
+		
+		input[type="submit"] {
+			background-color: #022449;
+            color: white;
+			padding: 10px 20px;
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+			font-size: 16px;
+			transition: background-color 0.3s;
+		}
+		
+		input[type="submit"]:hover {
+			background-color: #00761f;
+		}
+
+		/* Added to style column containers */
+		.column {
+			flex-basis: calc(50% - 10px);
+		}
+
+		/* Added to clear float for last input */
+		.clearfix::after {
+			content: "";
+			display: table;
+			clear: both;
+		}
+	</style>
+</head>
+<body>
+    <div class="intro">
+        <h1>Welcome to Placement Prediction App</h1>
+    </div>
+    <br>
+    <br>
+    <!-- <form action="{{ url_for('predict')}}" name="form" method="GET">
+        <p>Enter Gender(Female=0, Male=1)</p>
+        <input type="number" name="gender" id="gender">
+        <br>
+        <p>Enter Stream(Civil=0, CSE=1, Electronics=2, EnTC=3, IT=4, Mechanical=5)</p>
+        <input type="number" name="stream" id="stream">
+        <br>
+        <p>Enter Previous Internships</p>
+        <input type="number" name="internship" id="internship">
+        <br>
+        <p>Enter CGPA</p>
+        <input type="number" name="cgpa" id="cgpa">
+        <br>
+        <p>Enter Backlogs</p>
+        <input type="text" name="backlogs" id="backlogs">
+        <br>
+        <p>SSC Percentage</p>
+        <input type="text" name="ssc" id="ssc">
+        <br>
+        <p>HSC Percentage</p>
+        <input type="text" name="hsc" id="hsc">
+        <br>
+        <button type="submit">Submit</button>
+    </form> -->
+
+
+    <form action="{{ url_for('predict')}}" name="form" method="GET">
+		<!-- First column -->
+		<div class="column">
+			<label for="name">Enter Gender(Female=0, Male=1)</label>
+			<input type="number" name="gender" id="gender">
+			<br>
+			<label for="email">Enter Stream(Civil=0, CSE=1, Electronics=2, EnTC=3, IT=4, Mechanical=5)</label>
+			<input type="number" name="stream" id="stream">
+			<br>
+			<label for="password">Enter Previous Internships</label>
+			<input type="number" name="internship" id="internship">
+		</div>
+
+		<!-- Second column -->
+		<div class="column">
+			<label for="age">Enter CGPA</label>
+			<input type="number" name="cgpa" id="cgpa">
+			<br>
+			<label for="phone">Enter Backlogs</label>
+			<input type="text" name="backlogs" id="backlogs">
+			<br>
+			<label for="address">SSC Percentage</label>
+			<input type="text" name="ssc" id="ssc">
+		</div>
+        <br>
+		<!-- Last input at bottom -->
+		<label for="city">HSC Percentage</label>
+		<input type="text" name="hsc" id="hsc">
+		<br>
+		<input type="submit" value="Submit">
+	</form>
+    <br>
+    <br>
+    <div class="end">
+        <h2>This Website uses Decision Tree Model to predict results</h2>
+    </div>
+</body>
+</html>

@@ -1,0 +1,57 @@
+input {
+    
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+}
+
+form{
+    background-color: antiquewhite;
+    display: grid;
+    justify-content: space-around;
+    align-items: center;
+}
+
+div.intro{
+    background-color: #022449;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+div.end{
+    background-color: #022449;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+button{
+    margin-bottom: 5%;
+}
+
+div.by{
+    background-color: rgb(167, 220, 220);
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+
+div.ans{
+    display: grid;
+    justify-content: space-around;
+    align-items: center;
+    color: white;
+    font-size: 30px;
+}
+
+div.out{
+    display: grid;
+    justify-content: space-around;
+    align-items: center;
+    color: white;
+    font-size: 50px;
+    font-weight: bold;
+}

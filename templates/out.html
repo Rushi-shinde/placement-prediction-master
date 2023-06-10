@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>Placement Prediction</title>
+    <style>
+		body {
+			font-family: Arial, sans-serif;
+			background-color: #f4f4f4;
+		}
+		
+		form {
+			background-color: #047ea6;
+			padding: 20px;
+			margin: 0 auto;
+			border-radius: 5px;
+			box-shadow: 0 0 10px rgba(0,0,0,0.2);
+			display: flex; /* Added to make form display as flexbox */
+			flex-wrap: wrap; /* Added to allow flexbox items to wrap to next row */
+			justify-content: space-between; /* Added to separate two columns */
+            color: #f4f4f4;
+            width: 80%;
+            height: 450px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+		}
+		
+		
+	</style>
+</head>
+<body>
+    <div class="intro">
+        <h1>Welcome to Placement Prediction App</h1>
+    </div>
+    <br>
+    <br>
+    <form>
+		<div class="ans">
+            <h2>Your Result is </h2>
+        </div>
+        <div class="out">
+            <p>{{ output }}</p>
+        </div>
+	</form>
+    <br>
+    <br>
+    <div class="end">
+        <h2>This Website uses Decision Tree Model to predict results</h2>
+    </div>
+</body>
+</html>
